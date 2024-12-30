@@ -18,11 +18,11 @@ if (isset($_POST['loan_id'])) {
     $loan_id = $_POST['loan_id'];
 
     // Prepare the SQL query for a soft delete
-    $sql = "UPDATE loans2 SET delete_status = true WHERE loan_id = ?";
+    $sql = "UPDATE Loan2 SET delete_status = true WHERE loan_id = ?";
     
     // Use prepared statement to prevent SQL injection
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $book_id);
+    $stmt->bind_param("s", $loan_id);
 
     if ($stmt->execute()) {
         echo json_encode([

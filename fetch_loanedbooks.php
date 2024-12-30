@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 // Fetch loans with book_name and member_name
 $sql = "
     SELECT loan2.loan_id, loan2.book_id, loan2.member_id, loan2.loan_date, loan2.return_date, 
-           books2.book_name, member2.member_name
+           books2.book_name, member2.member_name, loan2.delete_status
     FROM loan2
     JOIN books2 ON loan2.book_id = books2.book_id
     JOIN member2 ON loan2.member_id = member2.member_id
